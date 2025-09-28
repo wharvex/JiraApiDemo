@@ -1,4 +1,5 @@
 import datetime
+from get_changelog import get_changelog
 
 def parse_component_durations(changelog):
     history = changelog['values']
@@ -26,6 +27,5 @@ def parse_component_durations(changelog):
                             del last_assigned_time[comp]
     return durations
 
-# Example use:
-# changelog = ... # as returned by the API
-# print(parse_component_durations(changelog))
+changelog = get_changelog()
+print(parse_component_durations(changelog))
